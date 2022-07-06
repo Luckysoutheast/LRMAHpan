@@ -1,13 +1,13 @@
 # ResMAHpan
 ResMAHPan: Pan-specific Multi Allelic pHLA Presenting Prediction through Resnet-based and LSTM-based Neural Networks
 
-#INSTALL
-install pytorch gpu
-install torchtext
-install spacy
-install pandas
-install numpy
+#INSTALL<br>
+install pytorch gpu<br>
+install torchtext<br>
+install spacy<br>
+install pandas<br>
+install numpy<br>
 
-#USE
+#USE<br>
 python predictor_res.py
 
