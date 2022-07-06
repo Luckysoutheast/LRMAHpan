@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>learn_more</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="jumbotron text-center">
+    <h1>DeepImmuno</h1>
+    <p>Prediction of epitope immunogenicity for CD8+ Cell</p> 
+    </div>
+
+
+<div class="container">
+    <div class="row" id="div1">
+        <h2>How to interpret immunogenicity score?</h2>
+        <p class="lead">A high immunogenicity score indicates increased confidence that the denoted peptide-HLA complex will trigger a T cell response, 
+            compared to another peptide with a lower immunogenicity score. However, it does not necessarily reflect the actual degree of immunogenicity, 
+            due to a lack of TCR sequence diversity information for a given individual. Specifically, the immunogenicity score reflects confidence based on experimental 
+            evidence of for immunogenicity in the training data. For example, if a single peptide (peptide-1) produced an immune response in 40 out of 40 experiments, 
+            it will result in a higher confidence observation than another peptide (peptide-2) that results in immune response 1 out of 6 experiments. 
+            DeepImmunoCNN uses a beta-binomial model to incorporate this evidence when deriving an immunogenicity potential from the training data. 
+            Hence, the output value reflects the confidence of the prediction.
+        </p>
+      </div>
+
+
+    <div class="row" id="div2">
+        <h2>When should I select the binding affinity option?</h2>
+        <p class="lead">Selecting this option will additionally produce peptide-MHC binding predications in addition to immunogenicity predictions for 
+            queried peptide(s). Any valid CD8+ T cell mediated immune response requires a peptide is presented by the HLA allele and the HLA-peptide complex 
+            triggers a T-cell response. DeepImmuno-CNN predicts immunogenicity and not MHC-binding. By selecting this option,  the user can assess the 
+            likelihood of both binding and immunogenicity in a single query. As such, this analysis requires approximately 30-60s additional runtime, 
+            as it calls the python package MHCflurry. </p>
+    </div>
+
+
+    <div class="row" id="div3">
+        <h2>What does the label "Caveat" indicate?</h2>
+        <p class="lead">In certain cases, the peptide query for a specific HLA allele, will produce unreliable results, when the HLA-allele has 
+            few immunogenicity experimental results in our training dataset. As such, DeepImmunno-CNN is not able to reliably infer its immunogenicity.</p>
+    </div>
+
+
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-xl text-center">
+        <h2> Click:
+        <a href="/" style="color:red;">Go back to query page</a>     <!--might need to change when deployed to production server-->
+        </h2>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>

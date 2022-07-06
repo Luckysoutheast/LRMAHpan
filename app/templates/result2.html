@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Result</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill="#619E73"
+                d="m55.30958,64.93366c2.5274,-6.85408 5.98672,-12.65878 9.26811,-15.55175c3.51547,-3.09936 1.95578,-4.44376 -1.67072,-1.4401c-1.52571,1.26366 -1.96163,0.34611 -1.96163,-4.12903c0,-10.67732 6.68266,-17.28414 22.7615,-22.50314c13.60508,-4.41607 23.63551,-9.38222 27.79434,-13.76125l3.38893,-3.56839l0,6.20864c0,7.67708 -2.87571,19.27528 -6.05886,24.43637c-3.37676,5.47501 -14.951,15.58107 -20.63067,18.0137c-5.08848,2.17943 -15.95584,2.82105 -21.76394,1.28496c-2.89441,-0.76549 -3.81301,-0.18062 -5.31274,3.38263c-0.99728,2.36946 -1.81325,5.74039 -1.81325,7.49093c0,1.98734 -0.96236,3.18278 -2.56219,3.18278c-1.90013,0 -2.27193,-0.78716 -1.43887,-3.04634l0,0l-0.00001,-0.00001z"
+                id="svg_5" stroke="#6F5C2A" />
+        </symbol>
+
+    </svg>
+
+    <main>
+        <h1 class="visually-hidden">STMHCPan</h1>
+
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                    <span class="fs-4">STMHCPan</span>
+                </a>
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Instructions</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Motif</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
+            </header>
+        </div>
+
+
+    </main>
+
+
+    <!-- <div class="jumbotron text-center">
+        <h1>STMHCPan</h1>
+        <p>Prediction of antigen presentation</p>
+    </div> -->
+
+    <div class="container">
+        <div class="mt-4 row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>peptide</th>
+                        <th>MHC</th>
+                        <th>BA score</th>
+                        <th>AP score</th>
+                        <th>PS score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for idx in range(length) %}
+                    <tr>
+                        <td>{{ p[idx] }}</td>
+                        <td>{{ mhc }}</td>
+                        <td>{{ ba[idx] }}</td>
+                        <td>{{ ap[idx] }}</td>
+                        <td>{{ ps[idx] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        {% if is_save == 'True' %}
+        <td><a href="/download">Download</a></td>
+        {% endif %}
+        <br>
+        <td><a href="/" style="color:red;">back</a></td>
+        <!-- <div class="row">
+      <div class="col-xl text-center">
+        <p> go
+          <a href="/" style="color:red;">back</a>
+        </p>
+      </div>
+    </div> -->
+
+    </div>
+
+</body>
+
+</html>
