@@ -21,4 +21,4 @@ peptide, label, A1, A2, B1, B2, C1, C2(the label column is not required when you
 #### python predict_res.py -t ./uploaded/multiple_query.csv -o result_multiple_query.csv  
 
 ## Result
-The results of the stand-alone test set are stored in the ***test.zip*** file
+The results of the stand-alone test set are stored in the ***test_result.zip*** file
