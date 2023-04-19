@@ -1,5 +1,5 @@
- # ResMAHpan
-ResMAHPan: Pan-specific Multi Allelic pHLA Presenting Prediction through Resnet-based and LSTM-based Neural Networks
+ # SeuMAHpan
+SeuMAHPan: a novel tool for multi-allelic HLA presentation prediction using Resnet-based and LSTM-based neural networks
 
 ## INSTALL<br>
 #### install pytorch gpu<br>
