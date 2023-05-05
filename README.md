@@ -1,5 +1,5 @@
- # RLMAHpan
-RLMAHPan: a novel tool for multi-allelic HLA presentation prediction using Resnet-based and LSTM-based neural networks
+ # LRMAHpan
+LRMAHPan: a novel tool for multi-allelic HLA presentation prediction using Resnet-based and LSTM-based neural networks
 
 ## INSTALL<br>
 #### install pytorch gpu<br>
@@ -9,7 +9,7 @@ RLMAHPan: a novel tool for multi-allelic HLA presentation prediction using Resne
 #### install numpy<br>
   
 ## DATA  
-Big data for training and 10 independent test datasets are stored in the ***data.zip*** under github's master path: https://github.com/Luckysoutheast/RLMAHpan/tree/master. You can learn more about the details of the original data in this link.
+Big data for training and 10 independent test datasets are stored in the ***data.zip*** under github's master path: https://github.com/Luckysoutheast/LRMAHpan/tree/master. You can learn more about the details of the original data in this link.
 
 ## USE<br>
 #### python predict_res.py –t  testfile.csv –o outfile.csv  
