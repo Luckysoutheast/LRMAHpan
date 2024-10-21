@@ -2,7 +2,7 @@
 This repository contains the codes for the paper [LRMAHpan: a novel tool for multi-allelic HLA presentation prediction using Resnet-based and LSTM-based neural network]
 
 
-LRMAHpan (**P**eptide-**HLA** **P**resentation  **M**odeling) is a deep learning-based model to predict the Peptide-HLA presentation, including two submodels LRMAHpan AP (Antigen Processing) and LRMAHpan BA (Binding Affinity). 
+LRMAHpan (Peptide-HLA Presentation  Modeling) is a deep learning-based model to predict the Peptide-HLA presentation, including two submodels LRMAHpan AP (Antigen Processing) and LRMAHpan BA (Binding Affinity). 
 
 AP Model only takes the primary sequences of  peptides as input. BA Model integrates both peptide sequences and 6 HLA types as input.
 
@@ -31,14 +31,14 @@ AP Model only takes the primary sequences of  peptides as input. BA Model integr
 1. Put your input Peptide-HLA sequence pairs in the `uploaded/multiple_query.csv` file. The peptide are represented by their sequences in the following format:
     | peptide    |      A1     |      A2     |      B1     |      B2     |      C1     |      C2     | 
     | -----------| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |       
-    | CASAPGLA.  | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
-    | CASAPGLA.  | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
+    | KLEDLERDL  | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
+    | AVLEOSGFRK | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
 
-If only one HLA type（such as HLA-A*02:01） is provided, the input data format is as follows:
+**Note**:If only one HLA type（such as HLA-A*02:01） is provided, the input data format is as follows:
     | peptide    |      A1     |      A2     |      B1     |      B2     |      C1     |      C2     | 
     | -----------| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |       
-    | CASAPGLA.  | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 |
-    | CASAPGLA.  | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | 
+    | KLEDLERDL  | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 |
+    | AVLEOSGFRK | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | 
 
 
 2. Run 
