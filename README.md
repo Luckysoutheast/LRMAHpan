@@ -45,7 +45,7 @@ AP Model only takes the primary sequences of  peptides as input. BA Model integr
     ```
     python predict_res.py -t uploaded/multiple_query.csv -o ./download/result_multipe.csv
     ```
-3. The predicted peptide-HLA presentation scores are in the `/download/result_multipe.csv`. The `PS` column in the file represent the predicted sequence-level presentation scores (probabilities) of the peptide-HLA pair.
+3. The predicted peptide-HLA presentation scores are in the `/download/result_multipe.csv`. The `PS` column in the file represent the predicted presentation scores (probabilities) of the peptide-HLA pair.
 
 
 
