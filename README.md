@@ -1,4 +1,4 @@
-# ResMAHpan
+# LRMAHpan
 
 ## data.zip  
 A file ***data.zip*** contains ***10_samples_dataset*** and ***train_datasets*** files.  
