@@ -1,8 +1,7 @@
 import torch
-from model.resnet import ResNet18
 import torch.nn.functional as F
-#from torchtext.legacy import data
-#import spacy
+from torchtext.legacy import data
+import spacy
 import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score,classification_report
@@ -207,9 +206,9 @@ def ResMHApan_predict(df):
 
 if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # df = pd.read_csv('G:/R_code/ucla/pt_all.csv')
     df = pd.read_csv(args.testfile)
-    #df = pd.read_csv('./uploaded/multiple_query.csv')
-    #df = pd.read_csv('./uploaded/21_AA_cut_1000.csv')
+    # df = pd.read_csv('./uploaded/29Tissue_len9_1v10.csv')
     print(len(df))
     df['A1'] = df['A1'].map(lambda x: x.replace(':','').replace('*',''))
     df['A2'] = df['A2'].map(lambda x: x.replace(':','').replace('*',''))
@@ -219,15 +218,15 @@ if __name__ == '__main__':
     df['C2'] = df['C2'].map(lambda x: x.replace(':','').replace('*',''))
     print('df: \n',df)
     # BA,AP,PS = ResMHApan_predict(df[['peptide','A1','A2','B1','B2','C1','C2']])
-    model_paths = ['./BA/1/model_best_97.08528446338023_156.pth',
-    './BA/1/model_best_97.10003318658626_96.pth',
-    './BA/1/model_best_97.20143064484344_61.pth',
-    './BA/2/model_best_97.29361013675008_172.pth.tar',
-    './BA/2/model_best_97.2954537265882_164.pth.tar',
-    './BA/2/model_best_97.30467167324709_69.pth.tar',
-    './BA/3/model_best_97.29176654691194_179.pth.tar',
-    './BA/3/model_best_97.2954537265882_159.pth.tar',
-    './BA/3/model_best_97.30467167324709_63.pth.tar',
+    model_paths = ['./BA/1/latest_best_0.9746_160.pth',
+    './BA/1/latest_best_0.9748_169.pth',
+    './BA/1/latest_best_0.9751_162.pth',
+    './BA/2/latest_best_0.9747_160.pth',
+    './BA/2/latest_best_0.9750_163.pth',
+    './BA/2/latest_best_0.9753_161.pth',
+    './BA/3/latest_best_0.9752_160.pth',
+    './BA/3/latest_best_0.9755_163.pth',
+    './BA/3/latest_best_0.9759_166.pth',
     ]
     ap_model_paths = ['./AP/1/latest_best_0.7912890967553345_123.pth',
     './AP/2/latest_best_0.7946202077250752_123.pth',
@@ -260,10 +259,8 @@ if __name__ == '__main__':
         word_idx = pkl.load(open(vocab_list[i], 'rb'))
         df_process = hla2seq(df)
         test_loader = HLAData_test_pool(df_process,word_idx)
-        model = ResNet18()
-        model.load_state_dict(torch.load(model_path)['state_dict'])
-        model.to(torch.device('cuda' if torch.cuda.is_available() else 'cpu'))                      
-        #model = torch.load(model_path).to(device)
+
+        model = torch.load(model_path).to(device)
         model.eval()
 
         with torch.no_grad():
@@ -309,6 +306,6 @@ if __name__ == '__main__':
     df['PS'] = df_ret['mean_proba'].to_list()
     print('final result: \n',df)
     # if is_save:
-    #df.to_csv('./app/download/res_example.csv',index=False)
+    # df.to_csv('./app/download/res_example.csv',index=False)
     df.to_csv(args.outfile,index=False)
     # return df
