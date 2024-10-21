@@ -33,18 +33,12 @@ AP Model only takes the primary sequences of  peptides as input. BA Model integr
     | -----------| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |       
     | KLEDLERDL  | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
     | AVLEOSGFRK | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
-1. Put your input Peptide-HLA sequence pairs in the `uploaded/multiple_query.csv` file. The peptide are represented by their sequences in the following format:
-    | peptide    |      A1     |      A2     |      B1     |      B2     |      C1     |      C2     | 
-    | -----------| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |       
-    | KLEDLERDL  | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
-    | AVLEOSGFRK | HLA-A*01:01 | HLA-A*02:01 | HLA-B*01:01 | HLA-B*37:01 | HLA-C*05:02 | HLA-A*07:01 |
-
 **Note**:If only one HLA type（such as HLA-A*02:01） is provided, the input data format is as follows:
-
     | peptide    |      A1     |      A2     |      B1     |      B2     |      C1     |      C2     | 
     | -----------| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |       
     | KLEDLERDL  | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 |
-    | AVLEOSGFRK | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | 
+    | AVLEOSGFRK | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 | HLA-A*02:01 |
+
 
 
 2. Run 
